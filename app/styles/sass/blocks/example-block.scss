@@ -1,0 +1,252 @@
+.page {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wrapper {
+	background-color: lighten($bg-color, 7);
+}
+
+.header {
+	// .header__row
+	&__row {
+		padding: 1.3rem 0 1.3rem;
+		text-align: center;
+	}
+	// .header__logo
+
+	&__logo {
+	}
+}
+
+.logo {
+	display: inline-block;
+	text-decoration: none;
+	max-width: 160px;
+	user-select: none;
+	&:active,
+	&:focus {
+		outline: none;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	img {
+		display: block;
+		width: 100%;
+	}
+}
+
+.button {
+	display: inline-block;
+	color: #fff;
+	border-radius: 20px;
+	padding: 7px 17px;
+	border: 1px solid #fff;
+	letter-spacing: 0.03rem;
+	background-color: transparent;
+	text-align: center;
+	transition: color 0.25s ease-in, border-color 0.25s ease-in;
+	justify-self: end;
+	@media (any-hover: hover) {
+		&:hover {
+			color: rgba(#fff, 0.5);
+			border-color: rgba(#fff, 0.5);
+		}
+	}
+}
+
+.page--bg {
+	background-image: url(../images/dist/bg.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.content {
+	// .content__row
+
+	&__row {
+		display: flex;
+		padding-top: 10px;
+		padding-bottom: 20px;
+		@include adaptiv-value("column-gap", 20, 20, 1);
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+		}		
+	}
+
+	// .content__item
+
+	&__item {
+		flex: 1 1 50%;
+	}
+
+	.item--left {
+		position: relative;
+		text-align: center;
+		img {
+			display: inline-block;
+			width: 80%;
+			@include media-breakpoint-down(md) {
+				width: 80%;
+			}
+		}
+	}
+	.content--bg {
+	}
+	.item--right {
+		padding: 20px 0;
+		display: flex;
+		align-items: center;
+		@include media-breakpoint-down(md) {
+			justify-content: center;
+		}
+	}
+
+	// .content__item-text
+
+	&__item-text {
+		@include media-breakpoint-down(md) {
+			text-align: center;
+		}
+	}
+
+	// .content__item-title
+
+	&__item-title {
+		@include adaptiv-value("margin-bottom", 30, 20, 1);
+	}
+
+	// .content__item-subtitle
+
+	&__item-subtitle {
+		@include adaptiv-value("margin-bottom", 20, 10, 1);
+	}
+
+	// .content__item-ul
+
+	&__item-ul {
+		display: flex;
+		flex-direction: column;
+		@include media-breakpoint-down(md) {
+			align-items: center;
+		}
+	}
+
+	// .content__item-li
+
+	&__item-li {
+		display: block;
+		position: relative;
+		list-style: none;
+		&::before {
+			content: "";
+			border-radius: 50%;
+			background-color: #fff;
+			position: absolute;
+			@include adaptiv-value("top", 10, 4, 1);
+			@include adaptiv-value("left", -15, -10, 1);
+			@include adaptiv-value("width", 6, 4, 1);
+			@include adaptiv-value("height", 6, 4, 1);
+		}
+	}
+
+	&__item-links {
+		a {
+			text-decoration: none;
+			&:not(:last-child) {
+				margin-right: 5px;
+			}
+			&:active,
+			&:focus {
+				outline: none;
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	p {
+		@include adaptiv-value("font-size", 16, 14, 1);
+	}
+
+	&__download {
+		@include adaptiv-value("font-size", 20, 20, 1);
+		margin-bottom: 20px;
+		span {
+			text-transform: uppercase;
+		}
+	}
+}
+
+.footer {
+	background-color: $bg-color;
+	// .footer__row
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 20px; 
+		padding-top:1rem;
+		padding-bottom:1rem;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include media-breakpoint-down(md) {
+			&:nth-child(1) {
+				flex: 1 1 100%;
+			}
+		}
+		@include media-breakpoint-down(sm) {
+			flex: 1 1 100%;
+		}
+	}
+
+	// .footer__logo
+
+	&__logo {
+	}
+
+	// .footer__title
+
+	&__title {
+		p {
+			margin-bottom: 0;
+			@include adaptiv-value("font-size", 24, 18, 1);
+		}
+	}
+
+	// .footer__button
+
+	&__button {
+	}
+
+	&__mail {
+		text-align: start;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-top: 1px solid rgba(255, 255, 255, .1);
+		@include media-breakpoint-down(sm) {
+			text-align: center;
+		}
+		a {			
+			text-decoration: none;
+			color: rgba(255, 255, 255, .4);
+			transition: color 0.25s ease-in;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+					color: rgba(255, 255, 255, .7);
+				}
+			}
+		}
+	}
+}
